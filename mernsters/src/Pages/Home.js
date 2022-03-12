@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import { Container, Row, Col } from 'react-grid-system';
 import NavBar from '../Components/NavBar';
-import axios from 'axios';
 
 
 // Grid System: npm install react-grid-system --save
