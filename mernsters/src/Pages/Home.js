@@ -20,7 +20,7 @@ export default function Home() {
         console.log("test")
         console.log(events)
         setEventData(events)
-        setLoading(false)
+        setLoading(false) 
     }
 
     useEffect(() => {
