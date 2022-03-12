@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-native-flexbox-grid": "^0.3.2"
+  }
+}
