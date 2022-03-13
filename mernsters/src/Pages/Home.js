@@ -40,7 +40,7 @@ export default function Home() {
 
     const fetchEvent = () => axios.get('https://eonet.gsfc.nasa.gov/api/v2.1/events').then((response) => {
         const lastGeometries = response.data.events[0].geometries.length - 1
-        // const data = response.data.events.slice(0,20)
+         const data = response.data.events.slice(0,20)
         // const data = response.data.events.filter(e => {
         //     if (getDistanceFromLatLonInKm(56.1304, 106.3468, e.geometries[0].coordinates[0], e.geometries[-1].coordinates[1]
         //         ) < 300) {
@@ -65,18 +65,19 @@ export default function Home() {
         console.log(err)
     },[])
 
-    useEffect(() => {
-        console.log(counter)
-        console.log("outside")
-        if(counter === 0){
-          fetchEvent(); increase()
-          console.log("one")
-        }
-        if(counter !== 0){
-          setInterval(fetchEvent, 100000);
-          console.log("two")
-        }
-    })
+    // useEffect(() => {
+    //     console.log(counter)
+    //     console.log("outside")
+    //     if(counter === 0){
+    //       fetchEvent(); increase()
+    //       console.log("one")
+    //     }
+    //     if(counter !== 0){
+    //       setInterval(fetchEvent, 100000);
+    //       console.log("two")
+    //     }
+    // })
+    fetchEvent()
 
     return (
         <div>
