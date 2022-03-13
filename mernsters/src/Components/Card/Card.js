@@ -19,8 +19,11 @@ const Card = (props) => {
                 {props.namingType}
             </div>
     }
+    if (!props){
+        return null;
+    }
     
-    return cardItems
+    return cardItems;
     
 }
 

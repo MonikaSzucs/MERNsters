@@ -24,48 +24,36 @@ export default function Home() {
     
 
     const fetchEvent = () => axios.get('https://eonet.gsfc.nasa.gov/api/v2.1/events').then((response) => {
-        console.log(response)
-        console.log(response[0])
-        console.log(response.data.events[0])
-        console.log(response.data.events[0].id)
-        console.log(response.data.events[0].geometries.length)
         const lastGeometries = response.data.events[0].geometries.length - 1
-        console.log(lastGeometries)
-        console.log(response.data.events[0].geometries[0].coordinates)
-        console.log(response.data.events[0].geometries[0].coordinates[0])
-        console.log(response.data.events[0].geometries[0].coordinates[1])
-        console.log(response.data.events[0].geometries[0].date)
-        console.log(response.data.events[0].title)
-        console.log(response.data.events[0].link)
-        console.log()
-        console.log("TESTING")
+        const data = response.data.events.slice(0,20)
+        console.log(data)
+        //let clusterGrabbed = []
+        
+        // let gary = {"id": response.data.events[0].id, 
+        //             "title": response.data.events[0].title,
+        //             "link": response.data.events[0].link
+        //         }
+        // var clusterCreated = clusterGrabbed.push(gary)
+        // console.log(clusterGrabbed)
 
-        let clusterGrabbed = []
-        let gary = {"id": response.data.events[0].id, 
-                    "title": response.data.events[0].title,
-                    "link": response.data.events[0].link
-                }
-        var clusterCreated = clusterGrabbed.push(gary)
-        console.log(clusterGrabbed)
-
-        setDataPassed(gary)
+        // setDataPassed(gary)
         
     }).catch((err)=>{
         console.log(err)
     },[])
 
-    useEffect(() => {
-        console.log(counter)
-        console.log("outside")
-        if(counter === 0){
-          fetchEvent(); increase()
-          console.log("one")
-        }
-        if(counter !== 0){
-          setInterval(fetchEvent, 100000);
-          console.log("two")
-        }
-    })
+    // useEffect(() => {
+    //     console.log(counter)
+    //     console.log("outside")
+    //     if(counter === 0){
+    //       fetchEvent(); increase()
+    //       console.log("one")
+    //     }
+    //     if(counter !== 0){
+    //       setInterval(fetchEvent, 100000);
+    //       console.log("two")
+    //     }
+    // })
 
     return (
         <div>
@@ -78,11 +66,12 @@ export default function Home() {
                 <Col sm={4}>
                 Home page
                     <div>
-                        <Card 
+                        {/* {data.map((eventsHappening) => 
+                            <Card 
                             allData={dataPassed}
-                            onChange={e => setDataPassed(e.target.value)}
-                            namingType="card"
-                        />
+                            />
+                        )}
+                         */}
                     </div>
                 </Col>
                 <Col sm={4}>
