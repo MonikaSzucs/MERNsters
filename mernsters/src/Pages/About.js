@@ -3,8 +3,8 @@ import { Container, Row, Col } from "react-grid-system";
 import NavBar from "../Components/NavBar/navbar";
 
 export default function About() {
-  return (
-    <div>
+    return (
+        <div>
       <div>
         <NavBar />
         <Container>
