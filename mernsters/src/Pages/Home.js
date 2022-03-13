@@ -13,7 +13,7 @@ export default function Home() {
     const [loading, setLoading] = useState(false)
     const [counter, setCounter] = useState(0);
     const [dataPassed, setDataPassed] = useState()
-    const apiURL = "https://eonet.gsfc.nasa.gov/api/v3/events?limit20&days=30&source=BCWILDFIRE&status=open";
+    const apiURL = "https://eonet.gsfc.nasa.gov/api/v3/events?limit=20&days=30&source=BCWILDFIRE&status=open";
     // gets 20 open cases from the past 30 days from bcwildfire
     
     const increase = () => {
@@ -23,39 +23,40 @@ export default function Home() {
       };
 
 
-    function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
-    var R = 6371; // Radius of the earth in km
-    var dLat = deg2rad(lat2-lat1);  // deg2rad below
-    var dLon = deg2rad(lon2-lon1); 
-    var a = 
-        Math.sin(dLat/2) * Math.sin(dLat/2) +
-        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
-        Math.sin(dLon/2) * Math.sin(dLon/2)
-        ; 
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-    var d = R * c; // Distance in km
-    return d;
-    }
+    // function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+    // var R = 6371; // Radius of the earth in km
+    // var dLat = deg2rad(lat2-lat1);  // deg2rad below
+    // var dLon = deg2rad(lon2-lon1); 
+    // var a = 
+    //     Math.sin(dLat/2) * Math.sin(dLat/2) +
+    //     Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+    //     Math.sin(dLon/2) * Math.sin(dLon/2)
+    //     ; 
+    // var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+    // var d = R * c; // Distance in km
+    // return d;
+    // }
     
-    function deg2rad(deg) {
-    return deg * (Math.PI/180)
-    }
+    // function deg2rad(deg) {
+    // return deg * (Math.PI/180)
+    // }
 
     const fetchEvent = () => axios.get(apiURL).then((response) => {
-        const lastGeometries = response.data.events[0].geometries.length - 1
-         const data = response.data.events.slice(0,20)
-
-        console.log(data)
-        setEventData(data)
-        let clusterGrabbed = []
+        console.log(response)
+        // const lastGeometries = response.data.events[0].geometries.length - 1
+        //  const data = response.data.events.slice(0,20)
+        // console.log(response)
+        // console.log(data)
+        // setEventData(data)
+        // let clusterGrabbed = []
         
-        let gary = {"id": response.data.events[0].id, 
-                    "title": response.data.events[0].title,
-                    "link": response.data.events[0].link
-                }
-        var clusterCreated = clusterGrabbed.push(gary)
+        // let gary = {"id": response.data.events[0].id, 
+        //             "title": response.data.events[0].title,
+        //             "link": response.data.events[0].link
+        //         }
+        // var clusterCreated = clusterGrabbed.push(gary)
 
-        setDataPassed(gary)
+        // setDataPassed(gary)
         
     }).catch((err)=>{
         console.log(err)
