@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
-import NavBar from '../Components/NavBar';
+import NavBar from '../Components/NavBar/navbar';
 
 export default function Login() {
     

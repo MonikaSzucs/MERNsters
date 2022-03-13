@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-grid-system';
-import NavBar from '../Components/NavBar';
+import NavBar from '../Components/NavBar/navbar';
 import Card from '../Components/Card/Card.js';
 import axios from 'axios';
 
