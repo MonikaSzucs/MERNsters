@@ -22,14 +22,34 @@ export default function Home() {
         }
       };
 
+    
+
     const fetchEvent = () => axios.get('https://eonet.gsfc.nasa.gov/api/v2.1/events').then((response) => {
         console.log(response)
         console.log(response[0])
         console.log(response.data.events[0])
+        console.log(response.data.events[0].id)
+        console.log(response.data.events[0].geometries.length)
+        const lastGeometries = response.data.events[0].geometries.length - 1
+        console.log(lastGeometries)
+        console.log(response.data.events[0].geometries[0].coordinates)
+        console.log(response.data.events[0].geometries[0].coordinates[0])
+        console.log(response.data.events[0].geometries[0].coordinates[1])
+        console.log(response.data.events[0].geometries[0].date)
         console.log(response.data.events[0].title)
+        console.log(response.data.events[0].link)
         console.log()
         console.log("TESTING")
-        setDataPassed(data => response.data.events[0].title)
+
+        let clusterGrabbed = []
+        let gary = {"id": response.data.events[0].id, 
+                    "title": response.data.events[0].title,
+                    "link": response.data.events[0].link
+                }
+        var clusterCreated = clusterGrabbed.push(gary)
+        console.log(clusterGrabbed)
+
+        setDataPassed(gary)
         
     }).catch((err)=>{
         console.log(err)
@@ -60,7 +80,7 @@ export default function Home() {
                 Home page
                     <div>
                         <Card 
-                            title={dataPassed}
+                            allData={dataPassed}
                             onChange={e => setDataPassed(e.target.value)}
                             namingType="card"
                         />
