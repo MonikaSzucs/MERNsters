@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './Home.css';
 import { Container, Row, Col } from 'react-grid-system';
 import NavBar from '../Components/NavBar';
 import Card from '../Components/Card/Card.js';

@@ -1,5 +1,4 @@
 import React from 'react';
-import './About.css';
 import { Container, Row, Col } from 'react-grid-system';
 import NavBar from '../Components/NavBar';
 
