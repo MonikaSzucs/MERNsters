@@ -28,12 +28,13 @@ export default function Login() {
             <Col sm={4}>
             </Col>
             <Col sm={4}>
+              Login HERE
             </Col>
             <Col sm={4}>
             </Col>
           </Row>
         </Container>
-        
+
         <Form onSubmit={handleSubmit}>
           <Form.Group size="lg" controlId="email">
             <Form.Label>Email</Form.Label>
