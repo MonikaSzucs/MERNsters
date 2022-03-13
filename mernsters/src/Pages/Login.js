@@ -1,16 +1,10 @@
-<<<<<<< Updated upstream
-import React from 'react';
-import { Container, Row, Col } from 'react-grid-system';
-import NavBar from '../Components/NavBar/navbar';
-=======
 import React, {useState} from 'react';
 import { Container, Row, Col } from 'react-grid-system';
-import NavBar from '../Components/NavBar';
+import NavBar from '../Components/NavBar/navbar';
 import Form from "react-bootstrap/Form";
 import Button from 'react-bootstrap/Button';
 import './Login.css'
 
->>>>>>> Stashed changes
 
 export default function Login() {
     const [email, setEmail] = useState("");
