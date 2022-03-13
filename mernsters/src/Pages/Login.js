@@ -19,23 +19,20 @@ export default function Login() {
     }
     
     return (
+      <div>  
+        <NavBar />
+          
         <div className="Login">
-        <div>
-            <NavBar/>
-            <Container>
-            <Row>
-                <Col sm={4}>
-                
-                </Col>
-                <Col sm={4}>
-                LOGIN HERE
-                </Col>
-                <Col sm={4}>
-                
-                </Col>
-            </Row>
-            </Container>
-        </div>
+        <Container>
+          <Row>
+            <Col sm={4}>
+            </Col>
+            <Col sm={4}>
+            </Col>
+            <Col sm={4}>
+            </Col>
+          </Row>
+        </Container>
         
         <Form onSubmit={handleSubmit}>
           <Form.Group size="lg" controlId="email">
@@ -44,22 +41,20 @@ export default function Login() {
               autoFocus
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+              onChange={(e) => setEmail(e.target.value)} />
           </Form.Group>
           <Form.Group size="lg" controlId="password">
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+              onChange={(e) => setPassword(e.target.value)} />
           </Form.Group>
           <Button block size="lg" type="submit" disabled={!validateForm()}>
-            Login
+            Log in
           </Button>
         </Form>
+        </div>
       </div>
     )
 }
-// Login

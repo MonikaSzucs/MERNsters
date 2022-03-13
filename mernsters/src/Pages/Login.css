@@ -2,9 +2,17 @@
     .Login {
       padding: 60px 0;
     }
-  
+
     .Login form {
       margin: 0 auto;
       max-width: 320px;
     }
+
+    .Login button {
+      position: relative;
+      float: left;
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 6px
   }
+}
